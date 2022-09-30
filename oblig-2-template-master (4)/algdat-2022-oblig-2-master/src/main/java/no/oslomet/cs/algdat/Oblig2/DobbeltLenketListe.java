@@ -10,6 +10,11 @@ import java.util.Iterator;
 
 public class DobbeltLenketListe<T> implements Liste<T> {
 
+    //main-metode må fjernes
+    public static void main(String[] args) {
+
+    }
+
     /**
      * Node class
      *
@@ -105,8 +110,20 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException();
+        // returnere  en  tegnstreng  med  listen verdier
+        String text = "["+hode.verdi;
+        text+=rekString(text, hode.neste)+", "+hale+"]"
+
     }
+    public static String rekString(String text, Node node){
+        if(node.neste==null){
+            return text;
+        }
+        text+=", "+node.verdi
+        rekString(text,node.neste)
+
+    }
+
 
     public String omvendtString() {
         throw new UnsupportedOperationException();
